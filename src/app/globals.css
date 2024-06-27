@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.primary-button {
+  @apply  px-4 py-2 rounded-lg font-bold  ;
+}
