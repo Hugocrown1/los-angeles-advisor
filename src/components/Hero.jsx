@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Hero = () => {
   return (
-    <section className=" bg-[#001845] h-[660px] w-full py-8">
+    <section className=" bg-[#001845] h-[660px] w-full py-8 mb-60">
       <div className="relative flex flex-col items-center justify-end  h-full w-[1000px] mx-auto">
         <div className="flex flex-col h-full items-center justify-start">
           <h1 className="text-[#EDAE49] text-[64px] font-bold text-center leading-tight">
