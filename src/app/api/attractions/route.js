@@ -3,11 +3,25 @@ import { register } from "@/instrumentation";
 import { NextResponse } from "next/server";
 import Attraction from "@/models/attraction";
 
-export async function GET() {
+export async function GET(request) {
   try {
     await register();
-    const attractions = await Attraction.find();
-    return NextResponse.json(attractions);
+
+    if (!request.nextUrl.searchParams.has("page")) {
+      const attractions = await Attraction.find();
+      return NextResponse.json(attractions);
+    }
+
+    const page = parseInt(request.nextUrl.searchParams.get("page"), 10);
+    const pageSize =
+      parseInt(request.nextUrl.searchParams.get("pageSize"), 10) || 6;
+
+    const skip = (page - 1) * pageSize;
+
+    const attractionsPage = await Attraction.find().skip(skip).limit(pageSize);
+    const total = await Attraction.countDocuments();
+
+    return NextResponse.json({ attractionsPage, total });
   } catch (error) {
     return NextResponse.error(error);
   }
