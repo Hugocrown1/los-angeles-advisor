@@ -6,7 +6,7 @@ const Header = () => {
     { name: "Sobre nosotros", route: "#about" },
   ];
   return (
-    <header className="bg-[#001845] font-bold text-[24px]">
+    <header id="home" className="bg-[#001845] font-bold text-[24px]">
       <div className="flex justify-between items-center w-full min-[1255px]:w-[1200px] h-[60px] mx-auto text-[#ffff]">
         <Link className="flex justify-center items-center gap-x-2" href="#home">
           <Sunset height="48" stroke="#EB9D34" />
