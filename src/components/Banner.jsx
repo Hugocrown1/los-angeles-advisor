@@ -23,7 +23,7 @@ const Banner = () => {
           >
             "
           </span>
-          <p className="font-semibold italic text-[48px]">
+          <p className="leading-tight font-semibold italic text-[48px]">
             I am an angel, this is the city where I belong
           </p>
         </div>

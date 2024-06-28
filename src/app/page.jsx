@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Banner from "./components/Banner";
-import Hero from "./components/Hero";
+import Banner from "../components/Banner";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
