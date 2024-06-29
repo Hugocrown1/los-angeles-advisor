@@ -15,9 +15,50 @@
 }
 
 h2 {
-  @apply text-5xl font-bold;
+  @apply text-4xl min-[435px]:text-5xl font-bold;
 }
 
 h3 {
   @apply text-3xl font-bold;
+}
+
+form input {
+  @apply px-2 rounded-lg border border-gray-300 text-black;
+}
+
+form label {
+  @apply block  font-semibold mt-2;
+}
+
+.gradient-bg {
+  background-image: linear-gradient(to right top, #001b44, #002d6f, #003f9d, #0052cd, #0065ff);
+}
+
+.spinner {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  animation: spinner-plncf9 3s infinite;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  border: 9px solid;
+  border-radius: 50%;
+  border-color: #474bff #474bff #0000 #0000;
+  mix-blend-mode: darken;
+  animation: spinner-plncf9 1s infinite linear;
+}
+
+.spinner::after {
+  border-color: #0000 #0000 #dbdcef #dbdcef;
+  animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+  100% {
+    transform: rotate(1turn);
+  }
 }

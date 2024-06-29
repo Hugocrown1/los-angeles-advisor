@@ -27,9 +27,12 @@ const CategoriesDisplay = () => {
     <section id="categories">
       <div className="flex flex-col container-xl text-center items-center mx-auto my-12">
         <h2>Ofrecemos las mejores experiencias</h2>
-        <div className="flex flex-row my-8 gap-x-4">
-          {pictures.map(({ src, alt, category }) => (
-            <figure className="group flex items-center justify-center relative w-[300px] aspect-square border-2 border-white">
+        <div className="grid grid-cols-2 min-[1250px]:grid-cols-4 my-8 gap-2 w-full">
+          {pictures.map(({ src, alt, category }, index) => (
+            <figure
+              key={index}
+              className="group flex items-center justify-center relative w-full aspect-square border-2 border-white"
+            >
               <span className="opacity-0 group-hover:opacity-100 z-20 text-white text-4xl font-semibold absolute transition-all">
                 {category}
               </span>
