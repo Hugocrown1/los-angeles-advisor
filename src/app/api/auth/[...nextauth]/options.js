@@ -1,6 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
-import User from "@/models/users";
+import User from "@/models/user";
 export const options = {
   providers: [
     CredentialsProvider({
