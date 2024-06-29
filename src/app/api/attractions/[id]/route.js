@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/db";
 import { NextResponse } from "next/server";
-import Attraction from "@/models/Attraction.js";
+import Attraction from "../../../models/Attraction.js";
 
 export async function GET(request, { params: { id } }) {
   try {
