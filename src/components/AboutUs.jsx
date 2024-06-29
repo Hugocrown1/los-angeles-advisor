@@ -5,7 +5,7 @@ import Writing from "./icons/Writing";
 const AboutUs = () => {
   return (
     <section id="about">
-      <div className="flex flex-col items-center mx-auto max-w-[1250px] text-center ">
+      <div className="flex flex-col items-center mx-auto max-w-[1250px] text-center mt-8 mb-24 ">
         <h2>Tenemos las mejores recomendaciones</h2>
         <div className="flex flex-row mt-8 gap-x-4">
           <div className="flex flex-col items-center justify-center max-w-[355px]">
