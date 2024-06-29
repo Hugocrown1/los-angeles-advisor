@@ -1,11 +1,11 @@
-import { register } from "@/instrumentation";
+import dbConnect from "@/lib/db";
 
 import { NextResponse } from "next/server";
-import Attraction from "@/models/attraction";
+import Attraction from "@/models/Attraction";
 
 export async function GET(request) {
   try {
-    await register();
+    await dbConnect();
 
     if (!request.nextUrl.searchParams.has("page")) {
       const attractions = await Attraction.find();
@@ -29,7 +29,7 @@ export async function GET(request) {
 
 export async function POST(request) {
   try {
-    await register();
+    await dbConnect();
     const body = await request.json();
     const attraction = new Attraction({ ...body });
     await attraction.save();

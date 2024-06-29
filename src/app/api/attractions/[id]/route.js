@@ -1,11 +1,10 @@
-import { register } from "@/instrumentation";
-
+import dbConnect from "@/lib/db";
 import { NextResponse } from "next/server";
-import Attraction from "@/models/attraction";
+import Attraction from "@/models/Attraction";
 
 export async function GET(request, { params: { id } }) {
   try {
-    await register();
+    await dbConnect();
 
     const attraction = await Attraction.findById(id);
 
@@ -17,7 +16,7 @@ export async function GET(request, { params: { id } }) {
 
 export async function PUT(request, { params: { id } }) {
   try {
-    await register();
+    await dbConnect();
     const body = await request.json();
     const attraction = await Attraction.findByIdAndUpdate(
       id,
@@ -34,7 +33,7 @@ export async function PUT(request, { params: { id } }) {
 
 export async function DELETE(request, { params: { id } }) {
   try {
-    await register();
+    await dbConnect();
     const response = await Attraction.findByIdAndDelete(id);
 
     return NextResponse.json(response);
